@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+footer ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+footer {
+	background-color: #404040;
+}
+
+.smaller-text {
+	font-size: 0.9em;
+}

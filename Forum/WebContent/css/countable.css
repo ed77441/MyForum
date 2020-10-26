@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+.countable > textarea {
+	resize: none;	
+}
+
+.countable > .text-counter {
+	font-family: 'Courier Prime', monospace;
+	color: #404040;
+	text-align: right;
+}
+
+.countable > .hide {
+	visibility: hidden;
+}

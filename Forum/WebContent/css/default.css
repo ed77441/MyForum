@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("/pics/background.jpg");
+	background-repeat: repeat;
+}
+
+
+#search-field {
+	max-width: 250px;
+}
+
+#notification-box {
+	width: 250px;
+}
+
+.notilink {
+    word-wrap: break-word !important; 
+  	text-decoration: none !important;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #555 !important;
+    background-color: #ddd !important;
+}
+
+#unseen-badge {
+	verticle-align: top;
+}
+
+@media screen and (max-width: 576px) {
+	#search-field {
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	#notification-box  {
+		width: 100%;
+	}
+	
+	form.my-nav-item {
+		margin-top: 12px !important;
+	}
+	
+		
+	.my-nav-item {
+		margin-top: 8px !important;
+	}
+	
+}

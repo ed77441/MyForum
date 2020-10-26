@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+#content-box-wrapper {
+	min-height: 500px;		
+}
+
+#content-box {
+	border: 1px solid #ddd;
+	background-color: white;
+}
+
+#page-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.thread-genre {
+	width: 100px;
+	display: inline-block;
+    vertical-align: middle;
+}
+
+
+.thread-caption {
+	width: calc(100% - 315px);
+	display: inline-block;
+    vertical-align: middle;
+}
+
+.thread-info {
+	width: 200px;
+	display: inline-block;
+    vertical-align: middle;
+}
+
+#search-string {
+	cursor: default;
+}
+
+@media screen and (max-width: 576px) {
+	#page-header {
+		display: block;
+	}
+	
+	#order-button-div {
+		margin-top: 16px;
+	}
+	
+	.thread-genre {
+	    vertical-align: top;
+	}
+
+	
+	.thread-caption {
+		width: calc(100% - 105px);
+	    vertical-align: top;
+	}
+	
+	.thread-info {
+		display: block;
+		width: auto;
+	}
+}

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.form-control.is-valid, .was-validated .form-control:valid {
+	 border-color: #DDDDDD !important;
+	 background-image: inherit !important;
+	 box-shadow: inherit !important;
+ }  
+  
+.form-control.is-valid:focus, .was-validated .form-control:valid:focus {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25) !important; 
+}

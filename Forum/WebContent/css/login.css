@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+#login-box-wrapper {
+	min-height: 600px;
+}
+
+#login-box {
+	background-color: white;
+	max-width: 590px;
+}
+
+#banner {
+	background-image: url(/pics/loginBoxBackground.svg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;   
+}
+
+#banner h2 {
+	font-family: 'Rubik', sans-serif;
+}
+
+
+.cancel-btn {
+	border-width: 2px !important;
+}

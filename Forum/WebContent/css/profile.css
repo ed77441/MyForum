@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+
+.border-3 {
+	border-width: 3px !important;
+}
+
+
+pre {
+	white-space: pre-wrap; /* Since CSS 2.1 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+	border-left: 5px solid #ddd;
+}
+
+
+.info-text {
+	color: #505050;
+}
+
+.min-height-wrapper {
+	min-height: 600px;
+}
+
+#profile-box {
+	background: white;
+}
+
+
+#image-box {
+	position: relative;
+	width: 150px;
+	margin: auto;
+}
+
+#image-chooser {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.post-number {
+	font-size: 40px;
+}
+
+
+
