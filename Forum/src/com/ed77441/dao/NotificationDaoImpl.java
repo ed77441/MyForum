@@ -117,5 +117,29 @@ public class NotificationDaoImpl implements NotificationDao {
 		
 		return rowCount;
 	}
+
+	private void deleteNotification(String idName, int id) {
+		try (SimpleJDBCWrapper jdbc =
+				new SimpleJDBCWrapper(JDBC_DRIVER, DB_URL, USER, PASS)) {
+			
+			String query = "DELETE FROM Notification WHERE " + idName + " = ?";
+			Object [] parameters = new Object[] {id}; 
+			jdbc.update(query, parameters);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	
+	@Override
+	public void deleteNotificationByCID(int cid) {
+		deleteNotification("CommentID", cid);
+	}
+
+	@Override
+	public void deleteNotificationByTID(int tid) {
+		deleteNotification("ThreadID", tid);
+	}
 	
 }

@@ -11,4 +11,6 @@ public interface NotificationDao {
 	
 	public void setNotificationSeen(String user);
 	public void addNotification(Notification notification);
+	public void deleteNotificationByCID(int cid);
+	public void deleteNotificationByTID(int tid);
 }

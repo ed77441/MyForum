@@ -8,6 +8,8 @@ import java.util.Optional;
 
 import com.ed77441.dao.CommentDao;
 import com.ed77441.dao.CommentDaoImpl;
+import com.ed77441.dao.NotificationDao;
+import com.ed77441.dao.NotificationDaoImpl;
 import com.ed77441.dao.ThreadDao;
 import com.ed77441.dao.ThreadDaoImpl;
 import com.ed77441.dao.UserDao;
@@ -21,15 +23,17 @@ public class PostService {
 	ThreadDao threadDao;
 	CommentDao commentDao;
 	UserDao accountDao;
+	NotificationDao notificationDao;
 	
 	public PostService() {
-		this(new ThreadDaoImpl(), new CommentDaoImpl(), new UserDaoImpl());
+		this(new ThreadDaoImpl(), new CommentDaoImpl(), new UserDaoImpl(), new NotificationDaoImpl());
 	}
 	
-	public PostService(ThreadDao threadDao, CommentDao commentDao, UserDao accountDao) {
+	public PostService(ThreadDao threadDao, CommentDao commentDao, UserDao accountDao,NotificationDao notificationDao) {
 		this.threadDao = threadDao;
 		this.commentDao = commentDao;
 		this.accountDao = accountDao;
+		this.notificationDao = notificationDao;
 	}
 	
 	private boolean isValidArticle(String caption, String genre, String content) {
@@ -117,6 +121,7 @@ public class PostService {
 		Optional<Thread> thread = requestThread(tid, requester);
 		
 		if (thread.isPresent()) {
+			notificationDao.deleteNotificationByTID(tid);
 			commentDao.deleteCommentByThreadID(tid);
 			threadDao.deleteThread(tid);
 			return true;
@@ -161,12 +166,12 @@ public class PostService {
 	public boolean removeComment(int cid, String requester) {
 		Optional<Comment> comment = requestComment(cid, requester);
 		if (comment.isPresent()) {
+			notificationDao.deleteNotificationByCID(cid);
 			commentDao.deleteComment(cid);
 			threadDao.decreaseCommentCount(comment.get().getThreadID());
-			
 			return true;
 		}
-		return true;
+		return false;
 	}
 	
 	public Optional<Thread> requestThread(int tid, String requester) {
