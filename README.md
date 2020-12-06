@@ -6,12 +6,12 @@ Demo影片: https://youtu.be/Zdyjf66rV2E
 架構解釋
 
   1. filter - url parameter filter <br/>
-     如果url參數不符合 servlet所設定的分別get post put delete參數規則的話 重新導向到錯誤頁面 <br/>
-     否則filter就把按照規則把參數 轉換成想要的型態型態 並塞到 request attribute裡 交給servlet <br/>
+     如果 url 參數不符合 servlet所設定的分別 get post put delete 參數規則的話 重新導向到錯誤頁面 <br/>
+     否則 filter 就把按照規則把參數 轉換成想要的型態型態 並塞到 request attribute 裡交給 servlet <br/>
   2. servlet (controller) - 讀出參數並交給service <br/>
      如果service 執行失敗 重新導向到錯誤頁面 <br/>
      否則執行以下流程 <br/>
-     &nbsp;&nbsp;&nbsp;&nbsp;如果是get method 就交給 service讀取相應 POJO class物件 (model) 並丟給 jsp (view) <br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;如果是 get method 就交給 service 讀取相應 POJO class物件 (model) 並丟給 jsp (view) <br/>
      &nbsp;&nbsp;&nbsp;&nbsp;否則 交給 service 更新資料表 並重新導向到其他頁面 <br/>
   3. service - 驗證資料格式和檢查此執行動作合法的 (例如如果某人想改變別人的留言就會失敗) <br/>
      如果參數格式正確 交給 dao 處理 <br/>
